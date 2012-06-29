@@ -1,0 +1,192 @@
+# Pixel Punching with PHP
+GD and Imagick
+
+- Introduction
+	- "Working with pictures is a must anymore to complete the whole social experience of the Internet."
+- PHP Graphic Library Overview
+	- GD
+	- Imagick
+	- GMagick
+		- ignored because it is a fork of IMagick
+		- does not work on Windows either
+	- Cairo
+		- vector graphics
+		- insufficient documentation
+	- Exif
+		- reads metadata for JPEGs, cannot write
+- GD Graphics Library
+	- Graphics Draw Library
+		- Originally GIF Draw
+	- Was unable to render GIFs from 1999-2004 because the GIF license was revoked. In 2004 the GIF patent expired.
+	- Has bindings for most languages.
+	- Is not maintained. PHP maintains its version of GD.
+	- Uses a "copy and paste" approach for images.
+	- Pros
+		- Comes bundled with PHP.
+		- Compiles anywhere first time.
+		- Lightweight for lightweight work.
+		- Most web hosts will have it.
+	- Cons
+		- Cumbersome to do advanced work with.
+		- OLD style API (pre-OOP) - Procedural
+		- Larger jobs consume LOTS of resources.
+		- Terribad at Alpha Chanel (opacity)
+	- ImageMagick
+		- Imagick is the utility. Imagick is the PHP binding.
+		- Huge graphics library able to write nearly any image format.
+		- Basically a Photoshop for your CLI.
+		- Layer based system.
+		- Has support for OpenCL.
+			- can use the GPU
+		- Pros
+			- Lots of advanced features.
+			- Decent OOP interface.
+			- Does heavy lifting with ease.
+		- Cons
+			- Difficult to compile and manage dependencies.
+			- Method names can be challenging.
+- Uploading
+	- The Server
+		- php.ini
+			- file_uploads = on
+			- upload_max_filesize = 10M
+			- post_max_size = 10M
+			- max_file_uploads = 10
+		- Large uploads take time
+			- may want to set_time_limit() a higher value in the upload script if you are expecting larger uploads
+	- The Form
+		- enctype is important
+			enctype="jultipart/form-data"
+		- file elements
+			- <input type="file" name="myFile">
+		- The Upload
+			- $_FILES['myFile']
+- Resources
+	- Opening and Saving Files with GD
+		- GD is resource based, so you open a resource pointer and pass it to image functions
+		- GD is also limited in types; check for fie type
+			- $img = imagecreatefromjpeg($filename)
+			- imagecreatefrompng();
+			- imagecreatefromgif();
+	- Imagick
+		- Imagic is object-oriented
+		- filetypes are automatically handled
+			- $img = new Imagick($filename);
+			- the library throws exceptions (use in try-catch block)
+			- smart saving ($img->saveImage())
+	- Getting Image Size
+		- getimagesize() - returns array of graphic data
+		- list($imgw,$imgh) = getimagesize($filename)
+		- GD
+			- $imagew = imagesx($img);
+			- $imageh = imagesy($img);
+		- Imagick
+			- $imagew = $img->getImageWidth();
+			- $imageh =  $img->getImageHeight();
+		- Closing FIles / Freeing Resources
+			- free system resources when finished
+			- avoid memory issues
+			- GD
+				- imagedestroy($img)
+				- unset($img)
+			- Imagick
+				- $img->destroy();
+				- unset($img);
+		- Pseudocode
+			- GD
+			- Imagick
+	- Basic Geometric Tasks
+		- Cropping
+		- Resizing
+		- Scaling
+		- Thumbnail
+		- GD
+			- imagecopyresampled
+			- different maths, same function
+		- Imagick
+			- different functions
+	- Cropping
+		- cutting an image smaller than it already is
+		- need to know
+			- x and y of the top corner
+			- w and h of cropped area
+		- Cropping GD
+			- example (also available in PHP documentation)
+		- Cropping Imagick
+	- Resizing
+		- ignore aspect ratio
+		- Resizing GD
+			- imagecopyresampled()
+		- Resizing Imagick
+			- resizeImage(x, y, Imagick::FILTER_LANCZOS, 1)
+	- Scaling
+		- maintain aspect ratio
+		- Resizing GD
+			- add function for math
+		- Resizing Imagick
+			- no custom function required, add true to end of resizeImage()
+	- Thumbnailing
+		- fit to smallest dimension
+		- Thumbnailing GD
+			- "inception" method - image of an image of an image, or matrix math method
+			- scale to calculated size
+			- cut off excess
+			- keep resulting image
+		-Thumbnailing Imagick
+			- thumbnailImage(x, y);
+	- Examples
+		- Desaturate Images
+			- GD
+				- imagefilter($img, IMG_FILTER_GRAYSCALE)
+			- Imagick
+				- modulateImage(brightness, saturation, hue shift)
+			- results are slightly different
+		- Sepia Tone Images
+			- GD
+				- grayscale, then colorize: imagefilter($img, IMG_FILTER_COLORIZE, red, green, blue)
+			- IMagick
+				- true sepia function
+		- Watermarking
+			- GD
+				- grayscale, resample watermark on top of original image)
+			- Imagick
+				- modulateImage and compositeImage($img, Imagick::COMPOSITE_DEFAULT, $x, $y)
+		- Drawing
+			- GD
+				- draw directly on the image resource you want to draw on
+				- simple
+			- Imagick
+				- draw on "draw layer" and lay on top of image
+				- useful for advanced drawing, more complex
+		- Drawing Shapes
+			- GD
+				- imagefilledellipse()
+			- Imagick
+				- ellipse()
+		- Writing Text on an Image
+			- font issues are common
+			- TTF support reliable
+			- GD uses points
+			- Imagick uses pixels
+			- GD
+				- imagettftext($img, $size, $angle, $x, $y, $color, $fontfile, $text)
+			- Imagick
+				- draw layer
+				- $draw  new ImagickDraw, -> setFont, ->setFontSize, ->setFillColor
+				- $image-annotateImage($draw, $x, $y, $angle, $text)
+		- Performance
+			- limit upload and output size
+			- memory_limit may need to be rather high
+			- summary
+				- small images, much drawing: GD
+				- smalll images, much filtering: Imagick
+
+[@bobmajdakr](http://twitter.com/bobmajdakjr)
+
+[bob@majdak.net](mailto:bob@majdak.net)
+
+[http://catch404.net](http://catch404.net)
+
+[http://joind.in/6339](http://joind.in/6339)
+
+[http://github.com/bobmajdkr/dallasphp-image-tools-code](http://github.com/bobmajdkr/dallasphp-image-tools-code)
