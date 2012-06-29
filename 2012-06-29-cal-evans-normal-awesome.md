@@ -19,7 +19,7 @@ cal@calevans.com
 	- discussion of contributions of various developers
 - The Writers
 	- discussion of _ZF Daily_
-	- mention of Rob Allen's blog ("definitive tutorial on PHP")
+	- mention of Rob Allen’s blog ("definitive tutorial on PHP")
 	- mention of [phpdeveloper.org](http://phpdeveloper.org) and _Planet PHP_
 - The Leaders
 	- mention of _Dallas PHP_
@@ -36,11 +36,11 @@ cal@calevans.com
 	- discussion of importantce of ongoing contribution within an open-source ecosystem
 - Be a Teacher
 	- discussion of the value of communicating technical material from a context of deep technical expertise
-	- "If you're not a programmer, you have no business managing programmers."
+	- "If you’re not a programmer, you have no business managing programmers."
 	- encouragement toward technical blogging
 - Be a Speaker
-	- discussion of significance of "getting out" of one's "shell"
-	- "You're helping the person that don't understand it." [sic]
+	- discussion of significance of "getting out" of one’s "shell"
+	- "You’re helping the person that don’t understand it." [sic]
 - Be Awesome!
 	- software development is difficult, not trivial
 	- further discussion of difference between developers and non-developers
