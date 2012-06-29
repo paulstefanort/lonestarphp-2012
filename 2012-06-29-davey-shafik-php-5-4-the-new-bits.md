@@ -63,6 +63,9 @@ Davey Shafik
 		- built-in CLI server
 		
 [http://joind.in/talk/view/6336](http://joind.in/talk/view/6336)
+
 [@dshafik](http://twitter.com/dshafik)
+
 [davey@engineyard.com](mailto:dave@engineyard.com)
+
 [http://daveyshafik.com/slides](http://daveshafik.com/slides)
