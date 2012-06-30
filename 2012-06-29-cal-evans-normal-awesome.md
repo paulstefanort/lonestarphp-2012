@@ -1,9 +1,12 @@
 # !Normal===Awesome!
-Cal Evans
-cal@calevans.com
-@calevans
 
-- introduction
+Cal Evans
+
+[cal@calevans.com](mailto:cal@calevans.com)
+
+[@calevans](http://twitter.com/calevans)
+
+- Introduction
 	- works for Zend
 	- programming since 1985
 	- worked with FoxPro and other technologies
@@ -45,7 +48,10 @@ cal@calevans.com
 	- software development is difficult, not trivial
 	- further discussion of difference between developers and non-developers
 
-joind.in/talk/vide/6334
-blog.calevans.com
-@calevans
-cal@calevans.com
+[joind.in/talk/vide/6334](http://joind.in/talk/vide/6334)
+
+[blog.calevans.com](http://blog.calevans.com)
+
+[@calevans](http://twitter.com/calevans)
+
+[cal@calevans.com](mailto:cal@calevans.com)
