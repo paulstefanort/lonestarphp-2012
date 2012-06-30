@@ -17,7 +17,7 @@
 				- one arrow = directed edge
 				- no arrow or two arrows = undirected edge
 				- can have weights or capacities
-					- Ford & Fulkerson: network flow analysis research
+				- Ford-Fulkerson: network flow analysis research
 			- graph simply a collection of edges and nodes
 			- Types of Graphs
 				- Simple (at most one edge between any pair of nodes)
