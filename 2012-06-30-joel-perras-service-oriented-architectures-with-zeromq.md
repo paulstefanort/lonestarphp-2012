@@ -1,0 +1,101 @@
+# Service-ORiented Architectures with ZeroMQ
+
+Joel Perras
+
+- ZeroMQ
+	- Embeddable Networking Library
+	- sockets can be difficult to use (one-to-one communication)
+	- BSD-style sockets
+	- ZeroMQ tries to provide "better sockets"
+	- improvements
+		- queueing
+		- async i/o
+		- formatless
+		- transport
+		- routing
+		- error handling
+	- ZeroMQ Transports
+		- Unicast Transports (TCP, IPC, INPROC)
+		- Multicast Transports (EPGM, PGM)
+		- TCP uses ACKs, PGM uses negative acknowledgements
+	- ZeroQ imposes framing on transports
+		- TCP enters as a stream of bytes, ends with CLRF (?)
+- ZeroMQ vs. TCP
+	- Messages vs. bytes/frames
+	- I/O in background thread (non-blocking)
+	- N-to-N connections
+	- Fan out & Fan in endpoints
+	- ZeroMQ has a simple API
+- ZeroMQ Patterns are built-in
+	- Request/Reply
+		- ZMQ_REP (server)
+			- can connect to clients
+			- uses a round robin approach to communicate with multiple clients
+		- ZMQ_REQ (client)
+		-  example
+			- ZMQContext, ZMQSocket
+		- ZMQ_DEALER
+		- ZMQ_ROUTER
+	- Publish/Subscribe
+		- Publisher node
+		- Subscriber nodes
+		- one-way: publishers send to subscribers
+		- RabbitMQ (queueing system)
+		- ZMQ_PUB (publisher)
+		- ZMB_SUB (subscriber)
+	-Pipeline
+		- series of steps from start to finish
+		- Ventilator point (source)
+		- Workers (pull data pushed from the Ventilator, round robin), (push data to the Sink)
+		- Sink point (destination)
+		- ZMQ_PUSH
+		- ZMQ_PULL
+		- Add arbitrary workers
+			- all workers are independent; they are aware of the upstream point (Ventilator) and the downstream point (Sink)
+			- workers can also push to other worker
+		- Fair queueing
+		- Load balancing
+		- Ventilator only pushes, Sink only pulls
+	- Serialization Formats
+		- important when interacting between PHP, Python, Ruby, etc.
+		- avoid if possible (performance overhead)
+	- JSON (ubiquitous, of course)
+	- XML
+	- MessagePack (15-20% the size of JSON)
+	- Protobufs (custom schema system developed at Google)
+	- BSON (Binary JSON), used by MongoDB
+- A Slightly Trivial Example
+	- Application
+		- Send Emails
+		- Upload Pictures
+		- Resize/crop pictures
+	- Send Emails
+		- Pub/Sub
+		- Application (Pub)
+		- Users (Sub)
+	- Image Manipulation
+		- Pipeline
+	- DB as a Service
+		- Request/Reply
+		- abstracts the database
+		- consume your own data API
+		- particularly useful for larger infrastructures and data stores serving multiple applications
+	- Trade-offs
+		- other queueing might be more suitable
+		- ZeroMQ may be too much for some applications
+- PHP Bindings
+	- pear channel-discover pear.zero.mq
+	- pecl install zer.mq/zmq-beta
+- AMQP vs ZeroMQ
+	- AMQP
+		- written in Erlang
+		- broker-based queue system
+		- broker single point of failure
+		- includes reliable request/reply (waits for response)
+		- can perform transient pub/sub
+		- uses exchanges/queues/bindings as resources (not sockets)
+	- ZeroMQ
+		- brokerless
+		- REQ/REP, Pipeline, Pub/Sub, P2P
+		- supports arbitrary transports (not TCP only)
+		- uses sockets instead of resources
