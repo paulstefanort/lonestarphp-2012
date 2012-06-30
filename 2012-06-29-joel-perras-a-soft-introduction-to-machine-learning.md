@@ -1,5 +1,9 @@
 # A Soft Introduction to Machine Learning
 
+Joël Perras
+
+[@jperras](http://twitter.com/jperras)
+
 - Math
 	- predictive analyses based on given inputs
 	- computers do not have intuition
