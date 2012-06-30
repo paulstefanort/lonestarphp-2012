@@ -68,7 +68,7 @@ Chris Hartjes
 	- "Protected and private methods and attributes are difficult to test properly."
 	- application architecture determines testability
 - Methods?
-	- [Etsy's PHPUnit Extensions](https://github.com/etsy/phpunit-extensions)
+	- [Etsy’s PHPUnit Extensions](https://github.com/etsy/phpunit-extensions)
 		- uses annotations to flag methods you wish to test (annotations around protected methods)
 		- incorporates PHP’s Reflection API to turn protected methods into public methods for test purposes
 	- (http://www.gpub.ca/2012/06/02/testing-protected-methods-with-phpunit)http://www.gpub.ca/2012/06/02/testing-protected-methods-with-phpunit
@@ -92,5 +92,7 @@ Chris Hartjes
 	- [The Grumpy Programmer’s Guide to Building Testable PHP Applications](http://grumpy-testing.com)
 
 [@grmpyprogrammer](http://twitter.com/grmpyprogammer)
+
 [http://www.littleheart.net/atthekeyboard](http://www.littleheart.net/atthekeyboard)
+
 [http://joind.in/6335](http://joind.in/6335)
