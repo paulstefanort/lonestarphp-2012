@@ -1,5 +1,10 @@
 # Pixel Punching with PHP
-GD and Imagick
+
+Bob Majdak Jr
+
+[@bobmajdakjr](http://twitter.com/bobmajdakjr)
+
+## GD and Imagick
 
 - Introduction
 	- "Working with pictures is a must anymore to complete the whole social experience of the Internet."
