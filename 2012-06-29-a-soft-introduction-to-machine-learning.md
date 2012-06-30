@@ -20,10 +20,8 @@
 					- Ford & Fulkerson: network flow analysis research
 			- graph simply a collection of edges and nodes
 			- Types of Graphs
-				- Simple
-					- at most one edge between any pair of nodes
-				- Multigraph
-					- multiple edges between same vertices allowed
+				- Simple (at most one edge between any pair of nodes)
+				- Multigraph (multiple edges between same vertices allowed)
 		- Vectors & Points
 			- Vertex and points allow Amazon to recommend books, and Netflix to recommend films.
 			- "features"
