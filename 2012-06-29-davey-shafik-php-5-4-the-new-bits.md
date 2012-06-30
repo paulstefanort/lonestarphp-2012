@@ -1,5 +1,10 @@
 # PHP 5.4: The New Bits
+
 Davey Shafik
+
+[@dshafik](http://twitter.com/dshafik)
+
+[davey@engineyard.com](mailto:dave@engineyard.com)
 
 - About These Slides
 	- not simply showing what the speaker is saying

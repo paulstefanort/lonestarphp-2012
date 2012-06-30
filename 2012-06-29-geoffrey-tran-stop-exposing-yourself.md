@@ -1,4 +1,10 @@
-# Protect Yourself
+# Stop Exposing Yourself: Exploits, Attacks and Defenses
+
+Geoffrey Tran
+
+[@geoffreytran](http://twitter.com/geoffreytran)
+
+[geoffrey.tran@gmail.com](mailto:geoffrey.tran@gmail.com)
 
 - About
 	- Creative Technologist at RAPP
@@ -95,5 +101,7 @@
 				- iptables
 
 [@geoffreytran](http://twitter.com/geoffreytran)
+
 [geoffrey.tran@gmail.com](mailto:geoffrey.tran@gmail.com)
+
 [http://www.linkedin.com/in/geoffreytran](http://www.linkedin.com/in/geoffreytran)

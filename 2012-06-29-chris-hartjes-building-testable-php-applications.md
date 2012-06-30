@@ -1,6 +1,7 @@
 # Building Testable PHP Applications
+
 Chris Hartjes
-Lone Star PHP - June 29, 2012
+
 [@grmpyprogrammer](http://twitter.com/grmpyprogrammer)
 
 - Story Time
