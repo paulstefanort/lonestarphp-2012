@@ -53,37 +53,37 @@ Web & Mobile, Agile Apprentice
 			- DELETE /tasks/<id>
 				- remove the task with the specified _id_
 				- return a 204 if delete successful, otherwise return 500
-		- Backbone.js
-			- structure with models, collections, and views
-			- simple binding and handling of events
-			- connection to RESTful JSON API
-			- lightweight JavaScript "MVC"
-				- Backbone.Model
-				- BackBone.Collection
-				- View
-					- view "controller"
-					- templates, underscore.js
-				- Backbone.Events
-				- Implementation
-					- retrieve data from API
-						- App.Task = Backbone.Model.extend({});
-						- urlRoot = 'tasks', defaults: function() {}
-						- App.Tasks = Backbone.Collection.extend({ model: App.Task, url: '/tasks', comparator: function(task) {}  })
-						- var tasks = App.Tasks();
-						- tasks.fetch(); // calls API and returns App.Task models in the App.Tasks collection
-					- render HTML
-						- App.TaskView = Backbone.View.extend({});
-						- tagName = 'dif', className: 'inventory-row', template: _.template($('#pomtrac-task-tmpl').html())
-						- initialize: function() {}, render: function() {}
-						- <script type="text/javascript" id="pomtrac-task-tmpl">…</script>
-						- App.ActivityInventoryView = Backbone.View.extend({initialize: function(){}, render: function(){}, renderTask: function(){}})
-					- handle events
-						- change, click, hover, dblclick, etc.
-						- App.TaskView = BackBone.View.extend({ events: { 'change .textinput': 'update', update: function() {} } })
-					- configure application
-						- App namespace
-						- App.init = function() { $.ajaxSetup({'dataType': 'json'}); Backbone.emulateHTTP = true; ActivityInventory = new App.AcivityInventoryView({ el: $('#el') }) }
-						- App.ready = function() { app.init() }
+	- Backbone.js
+		- structure with models, collections, and views
+		- simple binding and handling of events
+		- connection to RESTful JSON API
+		- lightweight JavaScript "MVC"
+			- Backbone.Model
+			- BackBone.Collection
+			- View
+				- view "controller"
+				- templates, underscore.js
+			- Backbone.Events
+		- Implementation
+			- retrieve data from API
+				- App.Task = Backbone.Model.extend({});
+				- urlRoot = 'tasks', defaults: function() {}
+				- App.Tasks = Backbone.Collection.extend({ model: App.Task, url: '/tasks', comparator: function(task) {}  })
+				- var tasks = App.Tasks();
+				- tasks.fetch(); // calls API and returns App.Task models in the App.Tasks collection
+			- render HTML
+				- App.TaskView = Backbone.View.extend({});
+				- tagName = 'dif', className: 'inventory-row', template: _.template($('#pomtrac-task-tmpl').html())
+				- initialize: function() {}, render: function() {}
+				- <script type="text/javascript" id="pomtrac-task-tmpl">…</script>
+				- App.ActivityInventoryView = Backbone.View.extend({initialize: function(){}, render: function(){}, renderTask: function(){}})
+			- handle events
+				- change, click, hover, dblclick, etc.
+				- App.TaskView = BackBone.View.extend({ events: { 'change .textinput': 'update', update: function() {} } })
+			- configure application
+				- App namespace
+				- App.init = function() { $.ajaxSetup({'dataType': 'json'}); Backbone.emulateHTTP = true; ActivityInventory = new App.AcivityInventoryView({ el: $('#el') }) }
+				- App.ready = function() { app.init() }
 - Wrap Up
 	- MicroPHP is about exposing small-footprint libraries that solve common problems.
 	- Composer and Packagist help the PHP community by exposing micro frameworks and other libraries in an easy-to-consume manner.
