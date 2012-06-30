@@ -1,8 +1,8 @@
 # Lone Star PHP 2012
 
 ## Sponsors
-- Engineer Orchestra
-- Softlayer
+- [Orchestra.io](http://orchestra.io)
+- [Softlayer](http://softlayer.com)
 - others
 
 [API Hack Day](http://apihackdaydallas.eventbrite.com) - Sunday, July 1st @ _Improving Enterprises_
