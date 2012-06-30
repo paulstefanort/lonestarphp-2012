@@ -44,7 +44,7 @@
 	- Regression
 		- linear classification instead of binary classification
 	- Linear Regression
-	- Logistic REgression
+	- Logistic Regression
 	- Clustering
 		- extracting natural or artificial clusters from a data set
 		- select random points
