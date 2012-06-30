@@ -28,8 +28,8 @@ Cal Evans
 	- mention of _Dallas PHP_
 	- mention of _Atlanta PHP_
 	- mention of Ben Ramsey (Atlanta PHP and Nashville PHP)
-	- mention of Raphael ____ (formerly involved with PHP group in Brazil, now working in Amsterdam and leading a PHP group) + Michael Angelo(?) (Belgium, Netherlands, Luxembourg), organizer of another PHP conference (BeNeLux)
-	- mention of Jeremy Kindle in Memphis
+	- mention of Raphael Dohms (@rdohms) (formerly involved with PHP group in Brazil, now working in Amsterdam and leading a PHP group) + Michelangelo van Dam (@DragonBe) (Belgium, Netherlands, Luxembourg), organizer of another PHP conference (BeNeLux)
+	- mention of Jeremy Kendall (@JeremyKendall) in Memphis
 	- mention of diversity in the PHP community
 - Be a Builder
 	- encouragement to start or be involved with an open-source project
