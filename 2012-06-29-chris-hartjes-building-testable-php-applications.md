@@ -71,7 +71,7 @@ Chris Hartjes
 	- [Etsy’s PHPUnit Extensions](https://github.com/etsy/phpunit-extensions)
 		- uses annotations to flag methods you wish to test (annotations around protected methods)
 		- incorporates PHP’s Reflection API to turn protected methods into public methods for test purposes
-	- (http://www.gpub.ca/2012/06/02/testing-protected-methods-with-phpunit)http://www.gpub.ca/2012/06/02/testing-protected-methods-with-phpunit
+	- http://www.gpub.ca/2012/06/02/testing-protected-methods-with-phpunit
 		- new ReflectionMethod
 		- setAccessible(true)
 		- assert results of function call
